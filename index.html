@@ -3,11 +3,50 @@
   <head>
     <meta charset="UTF-8">
    <title>네코폴리네</title>
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   </head>
-  <body>
+  <body bgcolor="#08298A">
+  <style>
+    #maintitle{
+    border:dashed 5px #000000;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+	width: 400px;
+	height: 100px;
+	background-color: #ffffff;
+	margin-bottom: 10px;
+	-webkit-animation: cssAnimation 1.3697s 1 ease;
+    -moz-animation: cssAnimation 1.3697s 1 ease;
+    -o-animation: cssAnimation 1.3697s 1 ease;
+	}
+	p#text{
+	font-size: 30pt;
+	margin-top: 10px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	}
+	//animation
+    @-webkit-keyframes cssAnimation {
+from { -webkit-transform: rotate(360deg) scale(0.1) skew(0deg) translate(3px); }
+to { -webkit-transform: rotate(360deg) scale(0.951) skew(0deg) translate(3px); }
+}
+@-moz-keyframes cssAnimation {
+from { -moz-transform: rotate(360deg) scale(0.1) skew(0deg) translate(3px); }
+to { -moz-transform: rotate(360deg) scale(0.951) skew(0deg) translate(3px); }
+}
+@-o-keyframes cssAnimation {
+from { -o-transform: rotate(360deg) scale(0.1) skew(0deg) translate(3px); }
+to { -o-transform: rotate(360deg) scale(0.951) skew(0deg) translate(3px); }
+}
+  </style>
+  <center>
+  <div class="tada" id="maintitle">
+  <p id="text">NEKOPOLY.N-E.KR</p>
+  <div>
+  </center>
   
   <center>
-  <img src="nekopoly.svg" width="500" hight="500"/>
+  <img src="nekopoly.svg" width="500px" height="500px"/>
   </center>
    
   </body>
