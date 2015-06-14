@@ -40,7 +40,7 @@ Meow
 <br>
 ニャー
 </div>
-<img class="polynyan" src="nekopoly.svg" style="position:static top: 100px;" />
+<img class="polynyan" src="nekopoly.svg" style="position:static top: 100px;" alt="폴리냥" title="폴리냥을 눌러보세요." />
 <div id="top">
 <strong><font face="Comic Sans MS, cursive" size="40pt" color="#DA96F8">Nekopoly</font></strong>
 </div>
@@ -81,9 +81,17 @@ ps.캐릭터도 손좀봤습니다.
 switch(Math.floor((Math.random() * 2) +1) ){
 	case 1 : $('#titletxt').text("네코폴리"); break;
 	case 2 : $('#titletxt').text("ねこポリ"); break;
-	default : $('#titletxt').text("ねこポリ"); break;
+	default : $('#titletxt').text("네코폴리"); break;
 }
+(function($){
+	$('.polynyan').click(function(){
+		document.getElementById('nya').play()
+	});
+})(jQuery);
 //배경 스크롤 출처 :http://jquerydemo.com/animate-background-image.aspx
 </script>
+<audio id="nya">
+<source src="sound/meow.ogg" />
+</audio>
 </body>
 </html>
