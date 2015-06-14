@@ -27,6 +27,9 @@ N.E.K.O P.O.L.Y
 @import url("frame.css");
 </style>
 <body id="background">
+<div id="top">
+<strong><font size="40pt" color="#FFFFFF" id="titletxt">네코폴리</font></strong>
+</div>
 <div class="balloon">
 <img src="balloon.svg" width="400px" height="300px"/>
 </div>
@@ -37,7 +40,10 @@ Meow
 <br>
 ニャー
 </div>
-<img class="polynyan" src="nekopoly.svg" />
+<img class="polynyan" src="nekopoly.svg" style="position:static top: 100px;" />
+<div id="top">
+<strong><font face="Comic Sans MS, cursive" size="40pt" color="#DA96F8">Nekopoly</font></strong>
+</div>
 <div class="textbox">
 Nekopoly.n-e.kr 에오신것을환영합니다.
 <br />
@@ -72,6 +78,11 @@ ps.캐릭터도 손좀봤습니다.
 	        }, 20);
 
 })(jQuery);
+switch(Math.floor((Math.random() * 2) +1) ){
+	case 1 : $('#titletxt').text("네코폴리"); break;
+	case 2 : $('#titletxt').text("ねこポリ"); break;
+	default : break;
+}
 //배경 스크롤 출처 :http://jquerydemo.com/animate-background-image.aspx
 </script>
 </body>

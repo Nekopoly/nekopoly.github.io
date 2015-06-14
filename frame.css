@@ -37,6 +37,7 @@ position: absolute;
 div.textbox{
 	 text-align: center;
  display: block;
+ margin-top: 30px;
 margin-left: auto;
  margin-right: auto;
  border-color:#CCC;
