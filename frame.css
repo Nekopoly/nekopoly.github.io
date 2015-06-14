@@ -17,6 +17,7 @@ img.polynyan{
 	margin-top:15%;
 	width: 500px;
 	height: 500px;
+	cursor: pointer;
 }
 div.balloon{
 position: absolute; 
