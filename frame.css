@@ -49,3 +49,14 @@ margin-left: auto;
 	width: 400px;
 	height: 300px;
 }
+/*스크롤바*/
+::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(0,0,255,0.5);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,255,0.9);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,0,255,0.5);
+}
