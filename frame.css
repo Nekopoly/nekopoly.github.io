@@ -7,6 +7,12 @@ font-weight:bold;
 font-size:36px;
 }
 
+span#deco{
+color:#DA96F8;
+font-weight:bold;
+font-size:300;
+}
+
 body#background{
 background-image:url(fish.png);
 font-family: 'Nanum Gothic', sans-serif;
