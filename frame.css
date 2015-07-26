@@ -1,4 +1,5 @@
 @charset "utf-8";
+/* 나눔고딕 폰트를 불러옵니다. */
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 /* CSS Document */
 span#titletxt{
@@ -10,7 +11,7 @@ font-size:36px;
 span#deco{
 color:#DA96F8;
 font-weight:bold;
-font-size:300;
+font-size: 30px;
 }
 
 body#background{
@@ -33,6 +34,7 @@ height: 500px;
 cursor: pointer;
 }
 div.balloon{
+cursor: pointer;
 position: absolute; 
 top: 7%; 
 left: 60%;
@@ -40,7 +42,7 @@ width: auto;
 height: auto;
 }
 
-div.text{
+div#text{
 font-size: 40px;
 position: absolute; 
 top: 16%; 
