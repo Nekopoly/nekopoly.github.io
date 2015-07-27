@@ -100,6 +100,7 @@ switch(Math.floor((Math.random() * 5) +1) ){
 	case 5 : $('#text').html("냐옹<br/>Meow<br/>ニャー"); break;
 	default : break;
     }
+	document.getElementById('pop').play()
 	});
 })(jQuery);
 //배경 스크롤:http://jquerydemo.com/animate-background-image.aspx
@@ -108,6 +109,8 @@ switch(Math.floor((Math.random() * 5) +1) ){
 <audio id="nya">
 <source src="sound/meow.ogg" />
 </audio>
-
+<audio id="pop">
+<source src="sound/POP.ogg" />
+</audio>
 </body>
 </html>
