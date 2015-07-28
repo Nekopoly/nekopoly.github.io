@@ -103,15 +103,45 @@ switch(Math.floor((Math.random() * 5) +1) ){
     }
 	document.getElementById('pop').play()
 	});
-	
-  jQuery(function($) {
-        var loading = $('<div class="wrap-loading"><div class="loader"></div></div>')
-        .appendTo(document.body).hide();
-        $(window).ajaxStart(function(){loading.show});
-        $(window).ajaxStop(function(){loading.hide});
-    });
 //배경 스크롤:http://jquerydemo.com/animate-background-image.aspx
 </script>
+<script language="javascript">
+ $.ajax({ type:"POST"
+
+    ,url: "index.html"
+
+    ,data:""
+
+    ,success:function(res){
+
+
+        
+
+    }
+
+    ,beforeSend:function(){
+
+
+        $('.wrap-loading').removeClass('display-none');
+
+    }
+
+    ,complete:function(){
+
+        $('.wrap-loading').addClass('display-none');
+
+ 
+
+    }
+
+    ,error:function(e){
+
+
+    }
+
+    ,timeout:100000});
+</script>
+<div class="wrap-loading"><div class="loader"></div></div>
 <audio id="nya">
 <source src="sound/meow.ogg" />
 </audio>
