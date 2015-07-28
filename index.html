@@ -8,6 +8,8 @@
 </head>
 <style>
 @import url("frame.css");
+@import url("loading.css");
+@import url("loadingbg.css");
 </style>
 <body id="background">
 
@@ -50,7 +52,7 @@ Meow
   <br />
   <p>Email: <a href="mailto:spinpo1234@gmail.com">spinpo1234@gmail.com</a></p>
 </div>
-
+<!-- 스크립트 -->
 <script language="javascript">
 (function($) {
 
@@ -86,7 +88,6 @@ switch(Math.floor((Math.random() * 5) +1) ){
 }
 
 
-(function($){
 	$('.polynyan').click(function(){
 		document.getElementById('nya').play()
 	});
@@ -102,10 +103,19 @@ switch(Math.floor((Math.random() * 5) +1) ){
     }
 	document.getElementById('pop').play()
 	});
-})(jQuery);
+
+$(".wrap-loading").ajaxStart(function() {
+	   $(this).show();
+});
+
+$(".warp-loading").ajaxStop(function() {
+    $(this).hide();
+});
 //배경 스크롤:http://jquerydemo.com/animate-background-image.aspx
 </script>
-
+<div class="wrap-loading">
+	<div class="loader"></div>
+</div>
 <audio id="nya">
 <source src="sound/meow.ogg" />
 </audio>
