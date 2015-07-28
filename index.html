@@ -131,16 +131,16 @@ switch(Math.floor((Math.random() * 5) +1) ){
     }
 
     ,error:function(e){
-
-
+		$("#loadingtext").text("어라..? 서버가 죽었나?");
     }
 
-    ,timeout:100000});
+    ,timeout:10000});
 </script>
 <script src="js/ie-fade.js"></script>
 <div class="wrap-loading">
 <div class="loader">
 </div>
+<span id="loadingtext" style="font-size:36px; color:#FFF">로딩중...</span>
 </div>
 <audio id="nya">
 <source src="sound/meow.ogg" />
