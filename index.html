@@ -12,7 +12,6 @@
 @import url("loadingbg.css");
 </style>
 <body id="background">
-
 <div id="top">
 <span id="titletxt">네코폴리</font>
 </div>
@@ -128,10 +127,7 @@ switch(Math.floor((Math.random() * 5) +1) ){
 
     ,complete:function(){
 
-        $('.wrap-loading').addClass('display-none');
-
- 
-
+        $('.wrap-loading').fadeOut();
     }
 
     ,error:function(e){
@@ -141,7 +137,11 @@ switch(Math.floor((Math.random() * 5) +1) ){
 
     ,timeout:100000});
 </script>
-<div class="wrap-loading"><div class="loader"></div></div>
+<script src="js/ie-fade.js"></script>
+<div class="wrap-loading">
+<div class="loader">
+</div>
+</div>
 <audio id="nya">
 <source src="sound/meow.ogg" />
 </audio>
