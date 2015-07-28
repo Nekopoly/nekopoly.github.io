@@ -104,18 +104,15 @@ switch(Math.floor((Math.random() * 5) +1) ){
 	document.getElementById('pop').play()
 	});
 
-$(".wrap-loading").ajaxStart(function() {
-	   $(this).show();
-});
-
-$(".warp-loading").ajaxStop(function() {
-    $(this).hide();
-});
+  jQuery(function($) {
+        var loading = $('<div class="wrap-loading"><div class="loader"></div></div>')
+        .appendTo(document.body).hide();
+ 
+        $(window).ajaxStart(loading.show);
+        $(window).ajaxStop(loading.hide);
+    });
 //배경 스크롤:http://jquerydemo.com/animate-background-image.aspx
 </script>
-<div class="wrap-loading">
-	<div class="loader"></div>
-</div>
 <audio id="nya">
 <source src="sound/meow.ogg" />
 </audio>
