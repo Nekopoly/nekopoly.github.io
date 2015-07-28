@@ -128,10 +128,10 @@ switch(Math.floor((Math.random() * 5) +1) ){
     ,complete:function(){
 
         $('.wrap-loading').fadeOut();
+		$("#loadingtext").text("완료");
     }
 
     ,error:function(e){
-		$("#loadingtext").text("어라..? 서버가 죽었나?");
     }
 
     ,timeout:10000});
