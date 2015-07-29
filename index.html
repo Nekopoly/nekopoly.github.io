@@ -56,7 +56,21 @@ Meow
 <script src="js/loading.js"></script>
 <script src="js/ie-fade.js"></script>
 <script src="js/ballon.js"></script>
-<script src="js/redirect.js"></script>
+<script language="javascript">
+var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'Windows CE;', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson', 'Mobile', 'Symbian', 'Opera Mobi', 'Opera Mini', 'IEmobile');
+
+for (var word in mobileKeyWords){
+
+if (navigator.userAgent.match(mobileKeyWords[word]) != null){
+
+window.location.href = "http://nekopoly.n-e.kr/mobilepage";
+
+break;
+
+}
+
+}
+</script>
 <!-- 로딩화면 -->
 <div class="wrap-loading">
 <div class="loader">
