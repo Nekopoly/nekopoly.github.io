@@ -15,10 +15,9 @@
 })(jQuery);
 switch(Math.floor((Math.random() * 5) +1) ){
 	case 1 : $('#titletxt').text("네코폴리"); break;
-	case 2 : $('#titletxt').text("ねこポリ"); break;
-	case 3 : $('#titletxt').text("고양이폴리"); break;
-	case 4 : $('#titletxt').text("냥폴리"); break;
-	case 5 : $('#titletxt').text("네코폴리는 폴리폴리해."); break;
+	case 2 : $('#titletxt').text("고양이폴리"); break;
+	case 3 : $('#titletxt').text("냥폴리"); break;
+	case 4 : $('#titletxt').text("네코폴리는 폴리폴리해."); break;
 	default : break;
 }
 
@@ -27,7 +26,7 @@ switch(Math.floor((Math.random() * 5) +1) ){
 	case 2 : $('#text').html("말풍선<br/>내용바뀌는거<br/>처음봤어요?"); break;
 	case 3 : $('#text').css("font-size",29); $('#text').html("더뜯어고치고 싶은데<br/>생각이 안나네요."); break;
 	case 4 : $('#text').css("font-size",40); $('#text').html("..."); break;
-	case 5 : $('#text').html("냐옹<br/>Meow<br/>ニャー"); break;
+	case 5 : $('#text').html("냐옹<br/>Meow"); break;
 	default : break;
 }
 
