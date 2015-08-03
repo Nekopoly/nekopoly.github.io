@@ -13,6 +13,7 @@
 	        }, 20);
 
 })(jQuery);
+//접속 할때마다 내용바뀜.
 switch(Math.floor((Math.random() * 5) +1) ){
 	case 1 : $('#titletxt').text("네코폴리"); break;
 	case 2 : $('#titletxt').text("고양이폴리"); break;
@@ -20,6 +21,7 @@ switch(Math.floor((Math.random() * 5) +1) ){
 	case 4 : $('#titletxt').text("네코폴리는 폴리폴리해."); break;
 	default : break;
 }
+
 
 switch(Math.floor((Math.random() * 5) +1) ){
 	case 1 : $('#text').css("font-size",30); $('#text').html("페이지가 이상하게<br/>보이는점을<br/>수정했어요."); break;
