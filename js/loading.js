@@ -1,4 +1,4 @@
-$.ajax({ type:"POST"
+$.ajax({ type:"GET"
    ,url: "index.html"
    ,data:""
    ,success:function(res){
