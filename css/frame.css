@@ -9,7 +9,7 @@ font-size:36px;
 }
 
 span#deco{
-color:#DA96F8;
+color:#FFF;
 font-weight:bold;
 font-size: 30px;
 }
@@ -29,8 +29,8 @@ margin-right: auto;
 
 img.polynyan{
 margin-top:15%;
-width: 500px;
-height: 500px;
+width: 400px;
+height: 400px;
 cursor: pointer;
 }
 div.balloon{
