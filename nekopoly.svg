@@ -1,46 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="1000px" height="1000px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
-<g id="얼굴안내선">
-	<ellipse fill="#FFFFFF" cx="504.423" cy="578.31" rx="454.577" ry="352.307"/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1000px"
+	 height="1000px" viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<g id="&#xC5BC;&#xAD74;&#xC548;&#xB0B4;&#xC120;">
+	<ellipse style="fill:#FFFFFF;" cx="504.423" cy="578.31" rx="454.577" ry="352.307"/>
 </g>
-<g id="수염">
-	<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" x1="270" y1="615" x2="34.692" y2="500.5"/>
-	<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" x1="270" y1="649.5" x2="35" y2="649.5"/>
-	<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" x1="270" y1="683" x2="35" y2="789.078"/>
-	<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" x1="733" y1="615" x2="978" y2="500"/>
-	<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" x1="733" y1="649.5" x2="978" y2="649.5"/>
-	<line fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" x1="733" y1="683" x2="978" y2="789.078"/>
+<g id="&#xC218;&#xC5FC;">
+	<line style="fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" x1="270" y1="615" x2="34.692" y2="500.5"/>
+	<line style="fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" x1="270" y1="649.5" x2="35" y2="649.5"/>
+	<line style="fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" x1="270" y1="683" x2="35" y2="789.078"/>
+	<line style="fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" x1="733" y1="615" x2="978" y2="500"/>
+	<line style="fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" x1="733" y1="649.5" x2="978" y2="649.5"/>
+	<line style="fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;" x1="733" y1="683" x2="978" y2="789.078"/>
 </g>
-<g id="얼굴">
-	<g id="눈">
+<g id="&#xC5BC;&#xAD74;">
+	<g id="&#xB208;">
 		<ellipse cx="687" cy="422.5" rx="46" ry="45.5"/>
 		<ellipse cx="318.552" cy="422.5" rx="46.552" ry="45.5"/>
 	</g>
-	<g id="입">
-		<line fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" x1="507" y1="550" x2="507" y2="642"/>
-		<line fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" x1="507.412" y1="641.999" x2="455" y2="708.231"/>
+	<g id="&#xC785;">
+		<line style="fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:10;" x1="507" y1="550" x2="507" y2="642"/>
+		<line style="fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:10;" x1="507.414" y1="641.999" x2="455" y2="708.231"/>
 		
-			<line fill="none" stroke="#000000" stroke-width="10" stroke-miterlimit="10" x1="507.412" y1="641.999" x2="554.238" y2="708.231"/>
-		<g id="코">
-			<polyline fill="#F9C7C7" points="455,519 506.716,581.361 554.238,519 			"/>
+			<line style="fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:10;" x1="507.414" y1="641.999" x2="554.238" y2="708.231"/>
+		<g id="&#xCF54;">
+			<polyline style="fill:#F9C7C7;" points="455,519 506.716,581.361 554.238,519 			"/>
 		</g>
 	</g>
 </g>
-<g id="귀안내선">
+<g id="&#xADC0;&#xC548;&#xB0B4;&#xC120;">
 </g>
-<g id="왼쪽귀">
-	<polyline fill="#FFFFFF" points="132.616,377 378,245.539 132.616,44 	"/>
-	<g id="왼쪽귀속">
-		<polyline fill="#F9C7C7" points="133,44 133,377 339.103,258.97 		"/>
+<g id="&#xC67C;&#xCABD;&#xADC0;">
+	<polyline style="fill:#FFFFFF;" points="132.616,377 378,245.539 132.616,44 	"/>
+	<g id="&#xC67C;&#xCABD;&#xADC0;&#xC18D;">
+		<polyline style="fill:#F9C7C7;" points="133,44 133,377 339.103,258.97 		"/>
 	</g>
 </g>
-<g id="오른쪽귀">
-	<polyline fill="#FFFFFF" points="876,44 629.615,244.463 876,377 	"/>
-	<g id="오른쪽귀속">
-		<polyline fill="#F9C7C7" points="876,44 668,258 876,377 		"/>
+<g id="&#xC624;&#xB978;&#xCABD;&#xADC0;">
+	<polyline style="fill:#FFFFFF;" points="876,44 629.615,244.463 876,377 	"/>
+	<g id="&#xC624;&#xB978;&#xCABD;&#xADC0;&#xC18D;">
+		<polyline style="fill:#F9C7C7;" points="876,44 668,258 876,377 		"/>
 	</g>
 </g>
 </svg>
