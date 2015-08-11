@@ -1,18 +1,3 @@
-(function($) {
-
-	        var x = 0;
-	        var y = 0;
-	        var body = $("body#background");
-
-	        body.css('backgroundPosition', x + 'px' + ' ' + y + 'px');
-
-	        window.setInterval(function() {
-	            body.css("backgroundPosition", x + 'px' + ' ' + y + 'px');
-	            y--;
-	            x--;
-	        }, 20);
-
-})(jQuery);
 //접속 할때마다 내용바뀜.
 switch(Math.floor((Math.random() * 5) +1) ){
 	case 1 : $('#titletxt').text("네코폴리"); break;
