@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>php ajax 연동</title>
+    <script src="jquery.js"></script>
+    <style>
+        body{
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+			text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="clock_dis">
+    <span class="h"></span>
+    <span class="hh"></span>
+    <span>
+        <img src="number/colon.png"/>
+    </span>
+    <span class="m"></span>
+    <span class="mm"></span>
+    <span>
+        <img src="number/colon.png"/>
+    </span>
+    <span class="s"></span>
+    <span class="ss"></span>
+</div>
+<script language="JavaScript">
+    window.setInterval(function () {
+        $.ajax({
+            url: "time.php",
+            type: "GET",
+            data: "",
+            success: function (ok) {
+                var h = ok.slice(0, 1);
+                var hh = ok.slice(1, 2);
+                var m = ok.slice(2, 3);
+                var mm = ok.slice(3, 4);
+                var s = ok.slice(4, 5);
+                var ss = ok.slice(5, 6);
+                $(".h").html("<img src='number/num" + h + ".png'/>");
+                $(".hh").html("<img src='number/num" + hh + ".png'/>");
+                $(".m").html("<img src='number/num" + m + ".png'/>");
+                $(".mm").html("<img src='number/num" + mm + ".png'/>");
+                $(".s").html("<img src='number/num" + s + ".png'/>");
+                $(".ss").html("<img src='number/num" + ss + ".png'/>");
+            }
+
+        });
+    }, 1000);
+
+
+</script>
+
+</body>
+</html>
