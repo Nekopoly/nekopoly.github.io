@@ -57,7 +57,8 @@
             },
 			error: function(got){
 				$(".loading").css("display","block");
-				$("h1").text("이런.. 죽어버렸다 ㅠㅠ");
+				$("h2").text("이런.. 서버가 죽었다냥 ㅠㅠ 아니면 인터넷이 끊겼을지도, 아니면 다시새로고침 해봐.");
+                clearInterval();
 			}
         });
     }, 1000);
