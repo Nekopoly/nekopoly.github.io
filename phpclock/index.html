@@ -16,6 +16,7 @@
 </head>
 <body>
 <div class="loading">
+<h1>서버와 통신을 하는중...</h1>
 </div>
 <div class="clock_dis">
     <span class="h"></span>
@@ -32,17 +33,14 @@
     <span class="ss"></span>
 </div>
 <script language="JavaScript">
-$(document).ajaxStart(function() {
-	$(".loading").html("<h1>서버와 통신을 하는중...</h1>");
-});
-$(document).ajaxStop(function() {
-   	$(".loading").hide();
-});
     window.setInterval(function () {
         $.ajax({
             url: "http://neko.uy.to:1111/time.php",
             type: "GET",
             data: "",
+			beforeSend: function(){
+		      $(".loading").hide();
+			},
             success: function (ok) {
                 var h = ok.slice(0, 1);
                 var hh = ok.slice(1, 2);
@@ -58,7 +56,7 @@ $(document).ajaxStop(function() {
                 $(".ss").html("<img src='number/num" + ss + ".png'/>");
             },
 			error: function(got){
-				$(".loading").css("display","");
+				$(".loading").css("display","block");
 				$("h1").text("이런.. 죽어버렸다 ㅠㅠ");
 			}
         });
