@@ -6,6 +6,7 @@
     <script src="jquery.js"></script>
     <style>
         body{
+			margin-top: 40%;
             background-image: url('bg.png');
             background-repeat: no-repeat;
             background-size: cover;
@@ -14,6 +15,9 @@
     </style>
 </head>
 <body>
+<div class="loading" style="display:">
+<h1>서버와 통신을 하는중...</h1>
+</div>
 <div class="clock_dis">
     <span class="h"></span>
     <span class="hh"></span>
@@ -34,6 +38,9 @@
             url: "http://neko.uy.to:1111/time.php",
             type: "GET",
             data: "",
+			beforeSend: function(load_ok){
+				$(".loading").css("display","none");
+			},
             success: function (ok) {
                 var h = ok.slice(0, 1);
                 var hh = ok.slice(1, 2);
@@ -47,8 +54,11 @@
                 $(".mm").html("<img src='number/num" + mm + ".png'/>");
                 $(".s").html("<img src='number/num" + s + ".png'/>");
                 $(".ss").html("<img src='number/num" + ss + ".png'/>");
-            }
-
+            },
+			error: function(got){
+				$(".loading").css("display","");
+				$("h1").text("이런.. 죽어버렸다 ㅠㅠ");
+			}
         });
     }, 1000);
 
