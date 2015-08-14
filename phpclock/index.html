@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="loading">
-<h1>서버와 통신을 하는중...</h1>
+<h1>서버와 통신을 하는중...(^ㅇㅅㅇ^)</h1>
 </div>
 <div class="clock_dis">
     <span class="h"></span>
@@ -56,9 +56,12 @@
                 $(".s").html("<img src='number/num" + s + ".png'/>");
                 $(".ss").html("<img src='number/num" + ss + ".png'/>");
             },
-			error: function(got){
+			error: function(xhr,status,error){
 				$(".loading").css("display","block");
-				$("h1").text("이런.. 죽어버렸다 ㅠㅠ");
+				$("h2").text("이런.. 심각한 오류가 발생했다냥 (^-ㅅ-^) 코드:"+xhr.status);
+                if(status === "timeout")
+                    $("h2").text("서버가 잠수타고 있었다냥 (^-ㅅ-^)");
+                clearInterval();
 			}
         });
     }, 1000);
