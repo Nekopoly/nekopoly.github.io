@@ -70,14 +70,14 @@ ENV.Discussing = /^https?:\/\/(?:no-ssl\.|)namu\.wiki\/topic\/([0-9]+?)/.test(lo
 ENV.IsDocument = /^https?:\/\/(?:no-ssl\.|)namu\.wiki\/w\/(.+)/.test(location.href); //&& document.querySelector('p.wiki-edit-date');
 ENV.IsSettings = /^https?:\/\/(?:no-ssl\.|)namu\.wiki\/settings/.test(location.href);
 ENV.IsUserPage = /^https?:\/\/(?:no-ssl\.|)namu\.wiki\/contribution\/author\/.+\/(?:document|discuss)/.test(location.href);
-ENV.sumup = 0; //요약 자동입력?
-ENV.sumup_text = localStorage.getItem('supt'); // 저장된 요약
 ENV.IsUploadPage = /^https?:\/\/namu\.wiki\/Upload$/.test(location.href);
 if (document.querySelector("input[name=section]"))
   ENV.section = document.querySelector("input[name=section]").value;
 if (ENV.IsEditing){
-	if(ENV.sumup == 1)
-   	$('#logInput').val(ENV.sumup_text );
+	sumup = 0; //요약 자동입력?
+    sumup_text = localStorage.getItem('supt'); // 저장된 요약
+	if(sumup == 1)
+   	$('#logInput').val(sumup_text );
 	else 
 	
   ENV.docTitle = document.querySelector("h1.title > a").innerHTML;
