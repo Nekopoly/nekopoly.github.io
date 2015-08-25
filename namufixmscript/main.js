@@ -88,7 +88,7 @@ if (ENV.IsEditing){
   ENV.docTitle = document.querySelector("h1.title").innerHTML;
 if (nOu(ENV.section))
   ENV.section = -2;
-
+try{
 var SET = new function() {
   var discards = ['save', 'load'];
   this.save = function() {
@@ -113,6 +113,9 @@ var SET = new function() {
   };
 };
 SET.load();
+}catch(err){
+showNotification("인덱스가 없습니다."+err);
+}
 
 function INITSET() { // Storage INIT
   if (nOu(SET.dwHashes))
