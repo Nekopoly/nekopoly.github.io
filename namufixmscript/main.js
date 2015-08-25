@@ -49,7 +49,7 @@ $.ajax({
   url: "https://raw.githubusercontent.com/LiteHell/NamuFix/master/NamuFix.css",
   success: function(res) {
     //GM_addStyle(res.responseText);
-  	$('head').css(res);
+  	$('head').css(res.responseText);
   }
 });
 
@@ -79,10 +79,9 @@ if (document.querySelector("input[name=section]"))
 if (ENV.IsEditing){
 	sumup = 0; //요약 자동입력?
     sumup_text = localStorage.getItem('supt'); // 저장된 요약
-	if(sumup == 1)
+	if(sumup == 1){
    	$('#logInput').val(sumup_text );
-	else 
-	
+	}
   ENV.docTitle = document.querySelector("h1.title > a").innerHTML;
 }else if (ENV.IsDocument)
   ENV.docTitle = document.querySelector("h1.title").innerHTML;
