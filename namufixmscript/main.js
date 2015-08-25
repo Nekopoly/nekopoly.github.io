@@ -43,7 +43,7 @@ var showNotification = function(text) {
   }
   var makeNoti = function(permission) {
     if (permission === "granted") {
-      var notification = new InAppDialog(text);
+      var notification = new window.InAppDialog(text);
     }
   };
   if (Notification.permission === "granted") {
