@@ -36,20 +36,7 @@ If you want to contact me, send an email to asdf1234d@gmail.com
 }*/
 
 var showNotification = function(text) {
-  if (!("Notification" in unsafeWindow)) {
-    alert(text);
-    return;
-  }
-  var makeNoti = function(permission) {
-    if (permission === "granted") {
-      var notification = new InAppDialog(text);
-    }
-  };
-  if (Notification.permission === "granted") {
-    makeNoti("granted");
-  } else if (Notification.permission !== 'denied') {
-    Notification.requestPermission(makeNoti);
-  }
+	var notification = new InAppDialog(text);
 }
 
 //("em{font-style: italic;}");
