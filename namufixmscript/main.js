@@ -53,6 +53,8 @@
 		  }
 		});
 		
+ 		undefined.replace();
+		
 		function nOu(a) {
 		  return typeof a === 'undefined' || a == null;
 		}
