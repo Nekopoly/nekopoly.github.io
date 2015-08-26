@@ -35,12 +35,29 @@
 		  }
 		}*/
 		
-		
 		var showNotification = function(text) {
 		  var makeNoti = function(permission) {
 			  var notification = new alert(text);
 		  };
 		}
+		jQuery.cachedScript = function(url, options) {
+
+  // allow user to set any option except for dataType, cache, and url
+  options = $.extend(options || {}, {
+    dataType: "script",
+    cache: true,
+    url: url
+  });
+
+  // Use $.ajax() since it is more flexible than $.getScript
+  // Return the jqXHR object so we can chain callbacks
+  return jQuery.ajax(options);
+};
+
+// Usage
+$.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiColorPicker.js").done(function(script, textStatus) {
+  console.log( textStatus );
+});
 		
 		//("em{font-style: italic;}");
 		$('head').css("em{font-style: italic;}");
@@ -52,8 +69,7 @@
 			$('head').css(res.responseText);
 		  }
 		});
-		
- 		undefined.replace();
+ 
 		
 		function nOu(a) {
 		  return typeof a === 'undefined' || a == null;
@@ -70,12 +86,12 @@
 		} 
 		
 		var ENV = {};
-		ENV.IsEditing = /^https?:\/\/(?:no-ssl\.|)namu\.wiki\/edit\/(.+?)/.test(location.href);
-		ENV.Discussing = /^https?:\/\/(?:no-ssl\.|)namu\.wiki\/topic\/([0-9]+?)/.test(location.href);
-		ENV.IsDocument = /^https?:\/\/(?:no-ssl\.|)namu\.wiki\/w\/(.+)/.test(location.href); //&& document.querySelector('p.wiki-edit-date');
-		ENV.IsSettings = /^https?:\/\/(?:no-ssl\.|)namu\.wiki\/settings/.test(location.href);
-		ENV.IsUserPage = /^https?:\/\/(?:no-ssl\.|)namu\.wiki\/contribution\/author\/.+\/(?:document|discuss)/.test(location.href);
-		ENV.IsUploadPage = /^https?:\/\/namu\.wiki\/Upload$/.test(location.href);
+		ENV.IsEditing = /^http?:\/\/(?:no-ssl\.|)namu\.wiki\/edit\/(.+?)/.test(location.href);
+		ENV.Discussing = /^http?:\/\/(?:no-ssl\.|)namu\.wiki\/topic\/([0-9]+?)/.test(location.href);
+		ENV.IsDocument = /^http?:\/\/(?:no-ssl\.|)namu\.wiki\/w\/(.+)/.test(location.href); //&& document.querySelector('p.wiki-edit-date');
+		ENV.IsSettings = /^http?:\/\/(?:no-ssl\.|)namu\.wiki\/settings/.test(location.href);
+		ENV.IsUserPage = /^http?:\/\/(?:no-ssl\.|)namu\.wiki\/contribution\/author\/.+\/(?:document|discuss)/.test(location.href);
+		ENV.IsUploadPage = /^http?:\/\/namu\.wiki\/Upload$/.test(location.href);
 		if (document.querySelector("input[name=section]"))
 		  ENV.section = document.querySelector("input[name=section]").value;
 		if (ENV.IsEditing){
@@ -115,7 +131,7 @@
 		};
 		SET.load();
 		}catch(err){
-		showNotification("인덱스가 없습니다."+err);
+		//showNotification("인덱스가 없습니다."+err);
 		}
 		
 		function INITSET() { // Storage INIT
@@ -425,7 +441,7 @@
 			  return hr;
 			};
 		
-			// Functions To Process
+
 			var TextProc = {};
 			(function(r, txtarea) {
 			  r.value = function() {
@@ -567,7 +583,7 @@
 				c();
 			  }).button('닫기', c);
 			}
-		
+
 			// Add Basic MarkUp Buttons
 			var decoDropdown = Designer.dropdown('<span class="ion-wand"></span>').hoverMessage('텍스트 꾸미기');
 			decoDropdown.button('<strong>A</strong>', '굵게').click(function() {
