@@ -34,40 +34,24 @@
 			Notification.requestPermission(makeNoti);
 		  }
 		}*/
-		
+try{	
 		var showNotification = function(text) {
 		  var makeNoti = function(permission) {
 			  var notification = new alert(text);
 		  };
 		}
-		jQuery.cachedScript = function(url, options) {
-
-  // allow user to set any option except for dataType, cache, and url
-  options = $.extend(options || {}, {
-    dataType: "script",
-    cache: true,
-    url: url
-  });
-
-  // Use $.ajax() since it is more flexible than $.getScript
-  // Return the jqXHR object so we can chain callbacks
-  return jQuery.ajax(options);
-};
-
-// Usage
-$.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiColorPicker.js").done(function(script, textStatus) {
-  console.log( textStatus );
-});
+		
 		
 		//("em{font-style: italic;}");
 		$('head').css("em{font-style: italic;}");
 		$.ajax({
-		  type: "GET",
-		  url: "https://raw.githubusercontent.com/LiteHell/NamuFix/master/NamuFix.css",
-		  success: function(res) {
-			//GM_addStyle(res.responseText);
-			$('head').css(res.responseText);
-		  }
+			url:"http://www.nekopoly.tk:8080/namufixmscript/NamuFix.css",
+			type: "GET",
+			success: function(ok){
+				var nfStyleTag = document.createElement("style");
+				nfStyleTag.innerHTML = ok;
+				document.head.appendChild(nfStyleTag);
+			}
 		});
  
 		
@@ -80,60 +64,44 @@ $.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiC
 		  return d.getFullYear() + '년 ' + (d.getMonth() + 1) + '월 ' + d.getDate() + '일 ' + d.getHours() + '시 ' + d.getMinutes() + '분 ' + d.getSeconds() + '초';
 		}
 		if(window.localStorage.getItem('runned')==null){ 
-			showNotification("나무픽스 모바일을 설치해주셔서 감사합니다 \n PC에서 사용하던 나무픽스를 모바일에서도 즐겨보세요! \n - 네코폴리 -")
-			localStorage.setItem('supt','이문서는 나무픽스 모바일로 제작되었습니다.');
 		  window.localStorage.setItem('runned','1') 
 		} 
 		
 		var ENV = {};
-		ENV.IsEditing = /^http?:\/\/(?:no-ssl\.|)namu\.wiki\/edit\/(.+?)/.test(location.href);
-		ENV.Discussing = /^http?:\/\/(?:no-ssl\.|)namu\.wiki\/topic\/([0-9]+?)/.test(location.href);
-		ENV.IsDocument = /^http?:\/\/(?:no-ssl\.|)namu\.wiki\/w\/(.+)/.test(location.href); //&& document.querySelector('p.wiki-edit-date');
-		ENV.IsSettings = /^http?:\/\/(?:no-ssl\.|)namu\.wiki\/settings/.test(location.href);
-		ENV.IsUserPage = /^http?:\/\/(?:no-ssl\.|)namu\.wiki\/contribution\/author\/.+\/(?:document|discuss)/.test(location.href);
-		ENV.IsUploadPage = /^http?:\/\/namu\.wiki\/Upload$/.test(location.href);
+		ENV.IsEditing = /^http:\/\/no-ssl\.namu\.wiki\/edit\/(.+?)/.test(location.href);
+		ENV.Discussing = /^http:\/\/no-ssl\.namu\.wiki\/topic\/([0-9]+?)/.test(location.href);
+		ENV.IsDocument = /^http:\/\/no-ssl\.namu\.wiki\/w\/(.+)/.test(location.href); //&& document.querySelector('p.wiki-edit-date');
+		ENV.IsSettings = /^http:\/\/no-ssl.namu\.wiki\/settings/.test(location.href);
+		ENV.IsUserPage = /^http:\/\/no-ssl\.namu\.wiki\/contribution\/author\/.+\/(?:document|discuss)/.test(location.href);
+		ENV.IsUploadPage = /^http:\/\/no-ssl\.namu\.wiki\/Upload$/.test(location.href);
 		if (document.querySelector("input[name=section]"))
 		  ENV.section = document.querySelector("input[name=section]").value;
 		if (ENV.IsEditing){
-			sumup = 0; //요약 자동입력?
-			sumup_text = localStorage.getItem('supt'); // 저장된 요약
-			if(sumup == 1){
-			$('#logInput').val(sumup_text );
-			}
-		  ENV.docTitle = document.querySelector("h1.title > a").innerHTML;
+		  ENV.docTitle = $("h1.title > a").html();
 		}else if (ENV.IsDocument)
-		  ENV.docTitle = document.querySelector("h1.title").innerHTML;
+		  ENV.docTitle = $("h1.title").html();
 		if (nOu(ENV.section))
 		  ENV.section = -2;
-		try{
+
 		var SET = new function() {
 		  var discards = ['save', 'load'];
 		  this.save = function() {
 			for (var i in this) {
 			  if (discards.indexOf(i) != -1) continue;
-			 localStorage.setItem('SET_' + i, this[i]);
+			 localStorage.setItem('SET_' + i, JSON.stringify(this[i]));
 			}
 		  };
 		  this.load = function() {
 			var sets = localStorage ;
 			for (var i = 0; i < sets.length; i++) {
-			  var now = sets.key[i];
+			  var now = sets.key(i);
 			  if (now.indexOf('SET_') != 0) continue;
 			  if (discards.indexOf(now) != -1) continue;
-			  this[now.substring(4)] = localStorage.getItem(now);
+			  this[now.substring(4)] = JSON.parse(localStorage.getItem(now));
 			}
-		  };
-		  this.delete = function(key) {
-			if (discards.indexOf(key) != -1) return;
-			localStorage.removeItem(key);
-			delete this[key];
 		  };
 		};
 		SET.load();
-		}catch(err){
-		//showNotification("인덱스가 없습니다."+err);
-		}
-		
 		function INITSET() { // Storage INIT
 		  if (nOu(SET.dwHashes))
 			SET.dwHashes = {};
@@ -229,7 +197,7 @@ $.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiC
 			  }
 			  var dNow = docs[docIndex++];
 			  $.ajax({
-				url: 'https://namu.wiki/raw/' + dNow,
+				url: 'http://no-ssl.namu.wiki/raw/' + dNow,
 				type: "GET",
 				success: function(res) {
 				  var dcNow = 'ERR';
@@ -279,7 +247,7 @@ $.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiC
 		function getRAW(title, onfound, onnotfound) {
 		  $.ajax({
 			type: 'GET',
-			url: 'https://namu.wiki/raw/' + title,
+			url: 'http://no-ssl.namu.wiki/raw/' + title,
 			success: function(res) {
 			  if (res.status == 404) {
 				onnotfound(title);
@@ -290,11 +258,12 @@ $.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiC
 		  })
 		}
 		if (ENV.IsEditing || ENV.Discussing) {
-		  if (document.querySelectorAll("textarea").length == 1) {
+			
+		  if ($("textarea").length == 1) {
 			var rootDiv = document.createElement("div");
 		
 			// Init (Add Elements)
-			var buttonBar = document.createElement('div');
+			var buttonBar = document.createElement("div");
 			var txtarea = document.createElement('textarea');
 			buttonBar.className = 'NamaEditor NEMenu';
 			txtarea.className = 'NamaEditor NETextarea'
@@ -302,7 +271,7 @@ $.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiC
 			rootDiv.className += ' NamaEditor NERoot';
 			rootDiv.appendChild(buttonBar);
 			rootDiv.appendChild(txtarea);
-		
+			console.log("Is.Editing");
 			// Functions To Design
 			var Designer = {};
 			Designer.button = function(txt) {
@@ -345,9 +314,9 @@ $.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiC
 			  return r;
 			};
 			Designer.dropdown = function(txt) {
-			  var dropdownButton = document.createElement("div");
-			  var dropdown = document.createElement("div");
-			  var dropdownList = document.createElement("ul");
+      var dropdownButton = document.createElement("div");
+      var dropdown = document.createElement("div");
+      var dropdownList = document.createElement("ul");
 			  dropdownButton.innerHTML = '<div class="NEDropdownButtonLabel NamaEditor">' + txt + '</div>';
 			  dropdownButton.className = 'NamaEditor NEMenuButton';
 			  dropdown.className = 'NamaEditor NEDropDown';
@@ -546,12 +515,12 @@ $.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiC
 			  var w = window.NEWindow();
 			  var c = w.close;
 			  w.title('색 지정').content(function(e) {
-				var pickerWrapper = document.createElement('div');
-				var sliderWrapper = document.createElement('div');
-				var picker = document.createElement('div');
-				var slider = document.createElement('div');
-				var pickerIndicator = document.createElement('div');
-				var sliderIndicator = document.createElement('div');
+				var pickerWrapper = $('div').html();
+				var sliderWrapper = $('div');
+				var picker = $('div').html()('div');
+				var slider = $('div').html()('div');
+				var pickerIndicator = $('div').html()('div');
+				var sliderIndicator = $('div').html()('div');
 				pickerWrapper.appendChild(picker);
 				pickerWrapper.appendChild(pickerIndicator);
 				sliderWrapper.appendChild(slider);
@@ -608,7 +577,7 @@ $.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiC
 		
 			// Insertable Media Functions
 			function ImgurUpload() {
-			  var elm = document.createElement("input");
+			  var elm = $("input").html();
 			  elm.setAttribute("type", "file");
 			  elm.style.visibility = "hidden";
 			  elm.setAttribute("accept", "image/*");
@@ -1322,8 +1291,11 @@ $.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiC
 		  // 리다이렉트 버튼 추가
 		  addButton('리다이렉트', function(evt) {
 			var redirectFrom = prompt('어느 문서에서 지금 이문서로 리다이렉트?');
-			if (redirectFrom != null && redirectFrom.trim().length != 0)
+			if (redirectFrom != null && redirectFrom.trim().length != 0){
 			  location.href = 'https://namu.wiki/edit/' + redirectFrom + '?redirectTo=' + ENV.docTitle;
+			}else{
+			   console.log("취소됨");
+			}
 		  });
 		  // 상위 문서로의 링크
 		  if (ENV.docTitle.indexOf('/') != -1) {
@@ -1608,3 +1580,7 @@ $.cachedScript("https://raw.githubusercontent.com/LiteHell/NamuFix/master/FlexiC
 		}
 		if (Watcher.onoff())
 		  Watcher.runWorker();
+}catch(allerr){
+  console.log(allerr.message);
+  console.log(allerr.stack);
+}
