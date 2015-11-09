@@ -76,7 +76,7 @@ box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 }
 
 
-@media (max-width:599px){
+@media (max-width:599px) and (orientation:portrait){
 /* 나눔고딕 폰트를 불러옵니다. */
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 /* CSS Document */
