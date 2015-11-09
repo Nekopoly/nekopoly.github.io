@@ -1,0 +1,51 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body.bg{
+  background-image: url(fish.png);
+  background-size: 40%;
+  font-family: 'Nanum Gothic', sans-serif;
+  text-align: center;
+}
+div.textbox{
+text-align: center;
+display: block;
+margin-top: 30px;
+margin-left: auto;
+margin-right: auto;
+border-color:#CCC;
+border-style: solid;
+border-width: 3px;
+font-size:20px;
+background-color: rgb(255,255,255);
+width: 80%;
+height: auto;
+}
+img.polynyan{
+margin-top:15%;
+width: 30%;
+height: 30%;
+}
+div.balloon{
+	position: absolute;
+	top: 7%;
+	margin-left: 60%;
+width:400px;
+ height:300px;
+}
+div.ballon_text{
+	font-size: 16px;
+	position: absolute;
+	top: 13%;
+	left: 61%;
+	width: auto;
+	height: auto;
+}
+span.top{
+font-weight: bold;
+color:#FFF;
+font-size:19px;
+}
+span.footer{
+font-weight: bold;
+color:#DA96F8;
+font-size:19px;
+}

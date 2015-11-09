@@ -4,7 +4,7 @@
 <script src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="favicon.ico"/>
-<link type="text/css" rel="stylesheet" href="css/frame.css"/>
+<link  type="text/css" rel="stylesheet" href="css/frame.css"/>
 <title>네코폴리네</title>
 </head>
 <body id="background">
@@ -13,7 +13,7 @@
 </div>
 
 <div class="balloon">
-<img src="balloon.svg" width="400px" height="300px" alt="말풍선" title="말풍선을 눌러보세요(랜덤으로 말이 바뀝니다.)"/>
+<img class="imgboalloon" src="balloon.svg" alt="말풍선"/>
 </div>
 
 <div id="text">
@@ -30,24 +30,7 @@
   </p>
 </div>
 <!-- 스크립트 -->
-<script src="js/ie-fade.js"></script>
-<script src="js/ballon.js"></script>
 <script src="js/nekopolyne_main.js"></script>
-<script language="javascript">
-var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'Windows CE;', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson', 'Mobile', 'Symbian', 'Opera Mobi', 'Opera Mini', 'IEmobile');
-
-for (var word in mobileKeyWords){
-
-if (navigator.userAgent.match(mobileKeyWords[word]) != null){
-
-window.location.href = "http://nekopoly.n-e.kr/mobilepage";
-
-break;
-
-}
-
-}
-</script>
 <!-- 소리 -->
 <!--<audio id="nya">
 <source src="sound/meow.ogg" />
