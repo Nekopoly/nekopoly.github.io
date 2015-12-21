@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link type="text/css" href="css/index.css" rel="stylesheet"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>네코폴리네</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body background="img/img1.png">
+  <div class="content">
+  <div class="box">
+  <span style="font-weight:bold; font-size:36px">12월25일 크리스마스</span>
+  </div>
+<audio id="music">
+<font color="#FF0000" size="+6" style="background:#FFF">이브라우저는 html5 오디오가 지원하지 않습니다.</font>
+	</audio>
+<div id="audioplayer">
+	<button id="pButton" class="pause" onclick="play()"></button>
+  <div id="timeline">
+  		  <div id="playhead"></div>
+  </div>
+        <div id="time">00:00/00:00</div>
+  <div class="plist_box">
+    <ul id="playlist">
+        <li><a href="music/O2JAM.mp3">크리스마스의 기억</a></li>
+        <li><a href="music/Matt+Cab-Last+Christmas+(www.myfreemp3.cc).mp3">MattCab-LastChristmas</a></li>
+        <li><a href="music/bgm.mp3">크리스마스에는 축복을</a></li>
+    </ul>
+  </div>
+</div>
+<canvas id="analyser_render">
+  <font color="#FFF" size="+1" style="background:#FFF">canvas 미지원.</font>
+</canvas>
+  <!--
+  플레이어
+  http://jsfiddle.net/lastrose/vkMqR/light/     http://www.alexkatz.me/html5-audio/building-a-custom-html5-audio-player-with-javascript/
+  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/snow.js"></script>
+    <script src="js/audio.js"></script><script language="javascript">
+	$(document).ready(function(e) {
+        $.fn.snow();
+    });
+    $(document).ready(function(){
+  $('#analyser_render').css('width', $(window).width());
+  $('#analyser_render').css('height', $(window).height());
+  $(window).resize(function() {
+  $('#analyser_render').css('width', $(window).width());
+  $('#analyser_render').css('height', $(window).height());
+  });
+});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+	margin:0px;
+	padding:0px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.content{
+  margin-top:20%;
+  	text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.box{
+background:rgba(255,255,255,0.8);
+width:400px;
+  	text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*플레이어*/
+
+#audioplayer{
+	width: 480px;
+	height: 60px;
+	margin: 10px auto auto auto;
+}
+
+#pButton{
+    height:60px;
+    width: 60px;
+    border: none;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float:left;
+    outline:none;
+}
+
+.play{background:url(../img/play.png) ;}
+.pause{background: url(../img/pause.png) ;}
+
+#timeline{
+	width: 400px;
+	height: 10px;
+	margin-top: 25px;
+	float: left;
+	background: rgba(255,255,255,0.5);
+
+}
+#playhead{
+	cursor:pointer;
+	width: 10px;
+	height: 10px;
+	background: rgba(255,255,255,1);
+
+}
+#time{
+color:#FFF;
+font-size:24px;
+text-align:left;
+}
+#nowply{
+ font-size:36px;
+ color:#FFF;
+}
+/*플레이 리스트*/
+#playlist{
+  position:relative;
+  background:rgba(255,255,255,0.5);
+  width:440px;
+  padding:20px;
+list-style: none;
+left: 21px;
+}
+.active a{color:#000000; background:#FFF;font-weight:bold}
+li a{color:#494949;text-decoration:none; font-size: 18pt}
+li a:hover{color:#000;text-decoration:none; font-weight:bold; background:#fff;}
+
+#analyser_render{
+  position: relative;
+  z-index: -1;
+ left: 0px;
+  width:500px;
+   height:400px;
+}
+.plist_box{
+  overflow-x: auto;
+  height: 300px;
+}
+#audioplayer{
+  background:rgba(147,147,147,0.5);
+  height: 65px;
+}
