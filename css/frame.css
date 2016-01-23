@@ -18,8 +18,8 @@ font-size: 30px;
 body#background{
 background-image:url(fish.png);
 font-family: 'Nanum Gothic', sans-serif;
-/* 
-스크롤바 숨기기 
+/*
+스크롤바 숨기기
 왼쪽으로 치우쳐짐
 */
 text-align: center;
@@ -36,8 +36,8 @@ cursor: pointer;
 }
 div.balloon{
 cursor: pointer;
-position: absolute; 
-top: 7%; 
+position: absolute;
+top: 7%;
 left: 60%;
 width: auto;
 height: auto;
@@ -45,9 +45,9 @@ height: auto;
 
 div#text{
 font-size: 129%;
-position: absolute; 
-top: 16%; 
-left: 66%; 
+position: absolute;
+top: 16%;
+left: 66%;
 width: auto;
 height: auto;
 }
@@ -95,8 +95,8 @@ font-size: 30px;
 body#background{
 background-image:url(fish.png);
 font-family: 'Nanum Gothic', sans-serif;
-/* 
-스크롤바 숨기기 
+/*
+스크롤바 숨기기
 왼쪽으로 치우쳐짐
 */
 text-align: center;
@@ -105,26 +105,26 @@ margin-left: auto;
 margin-right: auto;
 }
 
-img.polynyan{
-margin-top:15%;
-width: 30%;
-height: 30%;
+img.polynyan {
+    margin-top: 15%;
+    width: 40%;
+    height: 40%;
 }
-div.balloon{
-	position: absolute;
-	top: 7%;
-	margin-left: 10%;
-	width: auto;
-	height: auto;
+div.balloon {
+    position: absolute;
+    margin-left: 5%;
+    width: auto;
+    height: auto;
+    top: 8%;
 }
 
-div#text{
-	font-size: 16px;
-	position: absolute;
-	top: 11%;
-	left: 72%;
-	width: auto;
-	height: auto;
+div#text {
+    position: absolute;
+    top: 16%;
+    left: 66%;
+    width: auto;
+    height: auto;
+    font-size: 60%;
 }
 
 div.textbox{
