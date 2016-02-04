@@ -94,6 +94,7 @@ font-size: 30px;
 
 body#background{
 background-image:url(fish.png);
+background-size: 60%;
 font-family: 'Nanum Gothic', sans-serif;
 /*
 스크롤바 숨기기
