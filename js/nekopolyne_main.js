@@ -14,9 +14,12 @@ switch(Math.floor((Math.random() * 5) +1) ){
 		var nekopoly_chan = ["네","코","폴","리","짱","!"];
 		var rainbow = ["ff0000","ff7f00","faff00","0026ff","002d87","7700ff"];
 		for (var i = 0; i <= 5; i++) {
-			var win = window.open("");
-			win.document.body.innerHTML = '<!doctype html><head><meta name="theme-color" content="'+'#'+rainbow[i]+'"/>'+
-			'<meta charset="utf-8"><title>'+nekopoly_chan[i]+'</title></head><body><p>'+nekopoly_chan[i]+'</p></body></html>';
+			var htmls = '<!doctype html><head><meta name="theme-color" content="#'+rainbow[i]+'"/>'+
+			'<meta charset="utf-8"><title>'+nekopoly_chan[i]+'</title></head><body style="background-color:'+rainbow[i]+'"><p>'+nekopoly_chan[i]+'</p></body></html>';
+			var x=window.open();
+x.document.open();
+x.document.write(htmls);
+x.document.close();
 		}
 	});
 //배경 스크롤:http://jquerydemo.com/animate-background-image.aspx
