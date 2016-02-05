@@ -15,7 +15,7 @@ switch(Math.floor((Math.random() * 5) +1) ){
 		var rainbow = ["ff0000","ff7f00","faff00","0026ff","002d87","7700ff"];
 		for (var i = 0; i <= 5; i++) {
 			var htmls = '<!doctype html><head><meta name="theme-color" content="#'+rainbow[i]+'"/>'+
-			'<meta charset="utf-8"><title>'+nekopoly_chan[i]+'</title></head><body style="background-color:'+rainbow[i]+'"><p>'+nekopoly_chan[i]+'</p></body></html>';
+			'<meta charset="utf-8"><title>'+nekopoly_chan[i]+'</title></head><body style="background-color:'+rainbow[i]+'"><p>'+nekopoly_chan[i]+'</p><p>chorome mobile only</p></body></html>';
 			var x=window.open();
 x.document.open();
 x.document.write(htmls);
