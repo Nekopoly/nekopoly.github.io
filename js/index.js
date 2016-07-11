@@ -17,7 +17,6 @@ $(document).ready(function() {
     type: 'GET',
     dataType: 'json',
   })
-
   .done(function(data) {
     var posts = data;
     for (var i = 0; i < posts.length; i++) {
@@ -30,4 +29,10 @@ $(document).ready(function() {
   .always(function() {
     console.log("complete");
   });
+});
+$.ajaxStart(function() {
+  $("#loading").show("fast");
+});
+$.ajaxStop((function() {
+  $("#loading").hide('fast');
 });
