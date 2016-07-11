@@ -33,6 +33,7 @@ $(document).ready(function() {
 $.ajaxStart(function() {
   $("#loading").show("fast", function(){});
 });
+
 $.ajaxStop((function() {
   $("#loading").hide('fast', function(){});
-});
+}));
