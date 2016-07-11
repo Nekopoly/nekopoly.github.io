@@ -32,7 +32,7 @@ $(document).ready(function() {
     console.log("error");
   })
   .always(function() {
-    $("#append_t").remove('#loading');
+    $("#loading").remove();
     console.log("complete");
   });
 });
