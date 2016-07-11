@@ -16,9 +16,9 @@ $(document).ready(function() {
     url: 'http://shiro.nekopoly.n-e.kr/tw/',
     type: 'GET',
     dataType: 'json',
-  })
-  .beforeSend(function(){
-    $("#append_t").before('<span id="loading">잠시만 기다려 주십시오..</span>');
+    beforeSend:function(){
+      $("#append_t").before('<span id="loading">잠시만 기다려 주십시오..</span>');
+    }
   })
   .done(function(data) {
     var posts = data;
