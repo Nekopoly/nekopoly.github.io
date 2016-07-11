@@ -23,7 +23,6 @@ $(document).ready(function() {
   .done(function(data) {
     var posts = data;
     for (var i = 0; i < posts.length; i++) {
-      $("#loading").text('파싱중 '+i);
       $('#append_t').append('<div class="cardview">'+posts[i].user.name+'<br>'+posts[i].text+'</div>');
     }
   })
