@@ -28,17 +28,11 @@ $(document).ready(function() {
     }
   })
   .fail(function() {
+    $("#loading").text('오류');
     console.log("error");
   })
   .always(function() {
     $("#append_t").remove('#loading');
     console.log("complete");
   });
-});
-$(document).ajaxStart(function() {
-  $("#append_t").append('<span id="loading">잠시만 기다려 주십시오..</span>');
-});
-
-$(document).ajaxStop((function() {
-  $("#append_t").remove('#loading');
 });
