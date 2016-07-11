@@ -14,6 +14,9 @@ background: #f9f9f9;
   text-align: center;
   display: block;
 }
+#loading{
+  visibility: hidden;
+}
 a{
   color: #0097A7;
   text-decoration: none;

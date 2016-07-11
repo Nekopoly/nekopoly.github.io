@@ -31,8 +31,8 @@ $(document).ready(function() {
   });
 });
 $.ajaxStart(function() {
-  $("#loading").show("fast");
+  $("#loading").show("fast", function(){});
 });
 $.ajaxStop((function() {
-  $("#loading").hide('fast');
+  $("#loading").hide('fast', function(){});
 });
