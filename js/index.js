@@ -17,9 +17,9 @@ $(document).ready(function() {
     type: 'GET',
     dataType: 'json',
   })
-  ,beforeSend:function(){
+  .beforeSend(function(){
     $("#append_t").before('<span id="loading">잠시만 기다려 주십시오..</span>');
-  }
+  })
   .done(function(data) {
     var posts = data;
     for (var i = 0; i < posts.length; i++) {
