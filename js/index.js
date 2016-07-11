@@ -30,10 +30,10 @@ $(document).ready(function() {
     console.log("complete");
   });
 });
-$('#append_t').ajaxStart(function() {
+$(document).ajaxStart(function() {
   $("#append_t").append('<span id="loading">잠시만 기다려 주십시오..</span>');
 });
 
-$('#append_t').ajaxStop((function() {
+$(document).ajaxStop((function() {
   $("#append_t").remove('#loading');
 });
