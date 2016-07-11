@@ -13,7 +13,7 @@ $(window).resize(function(event) {
 });
 $(document).ready(function() {
   $.ajax({
-    url: 'http://shiro.nekopoly.n-e.kr/tw',
+    url: 'http://shiro.nekopoly.n-e.kr/tw/',
     type: 'GET',
     dataType: 'json',
   })
