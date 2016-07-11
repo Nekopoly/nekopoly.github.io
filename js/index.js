@@ -31,9 +31,9 @@ $(document).ready(function() {
   });
 });
 $.ajaxStart(function() {
-  $("#loading").show("fast", function(){});
+  $("#append_t").append('<span id="loading">잠시만 기다려 주십시오..</span>');
 });
 
 $.ajaxStop((function() {
-  $("#loading").hide('fast', function(){});
-}));
+  $("#append_t").remove('#loading');
+});
