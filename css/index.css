@@ -33,6 +33,11 @@ a{
   z-index: 5; /* 네비게이션 우선순위  */
   position: fixed;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.42);
+  animation: nav_ani 1000ms;
+}
+@keyframes nav_ani {
+  from {padding: 0px;}
+  to { padding: 10px;}
 }
 .top_nav{
  padding: 10px;

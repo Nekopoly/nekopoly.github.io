@@ -2,7 +2,7 @@ $(window).scroll(function(event) {
   $('.top_nav').css('width', $(window).width());
   var nav = $('.top_nav'),
       scr = $(window).scrollTop();
-  if (scr < 100){
+  if (scr <= 99.9){
     nav.removeClass('nav_fix');
   }else{
     nav.addClass('nav_fix');
