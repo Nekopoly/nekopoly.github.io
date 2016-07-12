@@ -35,7 +35,7 @@ jQuery.fn.hashtaglink = function (target) {
 jQuery.fn.mentionlink = function (target) {
     if (target == null) target = '_blank';
 	return this.each( function() {
-        var re = /@([^\s]+)/g;
+        var re = /@([a-zA-Z0-9\_\.]+)/gim;
 		$(this).html( $(this).html().replace( re, '<a href="https://twitter.com/$1" target="'+ target +'">@$1</a>' ) );
 		console.log('mentionlink');
 	});
