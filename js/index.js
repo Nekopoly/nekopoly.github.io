@@ -22,10 +22,12 @@ $(document).ready(function() {
   })
   .done(function(data) {
     var posts = data;
-    for (var i = 0; i < posts.length; i++) {
+
+    Object.getOwnPropertyNames(posts).forEach(function(val, idx, arr) {
       //트위터 타임라인.
-      $('#append_t').append('<div class="cardview_content"><img src="'+posts[i].user.profile_image_url+'"/><span class="t_head tw_head_top">'+posts[i].user.name+'</span><hr><div class="tw_desc">'+posts[i].text+'</div></div>');
-    }
+      $('#append_t').append('<div class="cardview_content"><img src="'+posts[val].user.profile_image_url+'"/>'+
+      '<span class="t_head tw_head_top">'+posts[val].user.name+'</span><hr><div class="tw_desc">'+posts[val].text+'</div><div class="tw_desc">'+if(posts[val].media_url=='undefined'){}else{$('.tw_desc').append('<img src="'+posts[val].media_url+'"/>')}+'</div></div>');
+    });
   })
   .fail(function() {
     $("#loading").text('오류');
