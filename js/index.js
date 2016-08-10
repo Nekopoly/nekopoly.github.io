@@ -8,6 +8,7 @@ $(window).scroll(function(event) {
     nav.addClass('nav_fix');
   }
 });
+var posts;
 $(window).resize(function(event) {
   $('.top_nav').css('width', $(window).width());
 });
@@ -21,31 +22,26 @@ $(document).ready(function() {
     }
   })
   .done(function(data) {
-    var posts = data;
+    posts = data;
 
-    Object.getOwnPropertyNames(posts).forEach(function(val, idx, arr) {
-      //트위터 타임라인.
-      var medi;
-      if(posts[val].media_url=='undefined'){
-
-      }else{
-        $('.tw_desc').append('<img src="'+posts[val].media_url+'"/>');
-      }
-      $('#append_t').append('<div class="cardview_content"><img src="'+posts[val].user.profile_image_url+'"/>'+
-      '<span class="t_head tw_head_top">'+posts[val].user.name+'</span><hr><div class="tw_desc">'+posts[val].text+'</div><div class="tw_desc">'+if(posts[val].media_url=='undefined'){}else{$('.tw_desc').append('<img src="'+posts[val].media_url+'"/>')}+'</div></div>');
-    });
+    var medi;
+      Object.getOwnPropertyNames(posts).forEach(function (val, idx, arr){
+        $('#append_t').append('<div class="cardview_content">'
+        +'<img src="'+posts[val].user.profile_image_url+'"/>'+
+        '<span class="t_head tw_head_top">'+posts[val].user.name+
+        '</span><hr><div class="tw_desc">'+posts[val].text+'<img class="isremove" src="'+posts[val].media_url+'"/>'
+        +'</div></div>');
+        if($('.isremove').attr('src')=='undefined'){
+        $('.isremove').remove();
+        $('.tw_desc').append('<!-- 컨텐츠 없음 -->');
+        }
+      });
   })
-  .fail(function() {
-    $("#loading").text('오류');
-    console.log("error");
-  })
+  .fail(function() {$("#loading").text('오류');console.log("error");})
   .always(function() {
-    $("#loading").fadeOut('slow', function() {
-          $("#loading").remove();
-    });
+         $("#loading").remove();
          $('.cardview_content').autolink();
          $('.cardview_content').mentionlink();
          $('.cardview_content').hashtaglink();
-    console.log("complete");
   });
 });
