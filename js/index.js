@@ -18,7 +18,7 @@ $(document).ready(function() {
     type: 'GET',
     dataType: 'json',
     beforeSend:function(){
-      $("#append_t").append('<span id="loading">잠시만 기다려 주십시오..</span>');
+      $("#append_t").before('<span id="loading">잠시만 기다려 주십시오..</span>');
     }
   })
   .done(function(data) {
